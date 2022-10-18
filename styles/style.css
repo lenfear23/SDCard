@@ -2,6 +2,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: monospace;
 }
 .middle{
     margin-top: 70px;
@@ -12,7 +13,7 @@
     width: 50%;
     height: 40px;
     font-size: 20px;
-    font-family: monospace;
+    
     font-weight: 500;
     outline: none;
     border: 2px solid gray;
@@ -37,14 +38,14 @@ box-shadow: inset 20px 20px 60px #bebebe,
 .nev{
     margin: 20px 20px;
     font-size: 25px;
-    font-family: monospace;
+    
     font-weight: 400;
     color: gray;
 }
 .meret{
     margin: 300px 230px;
     font-size: 20px;
-    font-family: monospace;
+    
     font-weight: 400;
     color: gray;
 }

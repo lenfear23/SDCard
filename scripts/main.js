@@ -81,7 +81,36 @@ const data = [
 
     })
 
+
+
+    let radioBtns = document.querySelectorAll("input[name='meret']");
+
+    let findSelected = () => {
+      let selected = document.querySelector("input[name='meret']:checked").value;
+      console.log(selected);
+        document.getElementById("container").innerHTML = ``;
+
+        for(i=0; i<data.length;i++){
+          if(data[i].meret == selected){
+              document.getElementById("container").innerHTML += `
+              <div class="card">
+              <div class="nev">${data[i].nev}</div>
+              <div class="meret">${data[i].meret}</div>
+          </div>
+              `;
+          }
+      }
+    }
+
     
+
+    radioBtns.forEach(radioBtn => {
+      radioBtn.addEventListener("change", findSelected);
+    }
+
+    
+
+    /*
     //gombra kattintásra
     document.querySelector('#Search').addEventListener('click',()=>{
 
@@ -103,6 +132,5 @@ const data = [
             `;
         }
 
-    }})
-  })
-  
+    }})*/
+  )})
