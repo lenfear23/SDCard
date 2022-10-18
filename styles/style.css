@@ -19,3 +19,59 @@
     border-radius: 10px;
     padding: 10px;
 }
+.conatiner{
+    margin-top: 50px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.card{
+    margin: 50px 50px;
+    width: 300px;
+    height: 400px;
+    border-radius: 20px;
+    background: #e0e0e0;
+box-shadow: inset 20px 20px 60px #bebebe,
+            inset -20px -20px 60px #ffffff;
+}
+.nev{
+    margin: 20px 20px;
+    font-size: 25px;
+    font-family: monospace;
+    font-weight: 400;
+    color: gray;
+}
+.meret{
+    margin: 300px 230px;
+    font-size: 20px;
+    font-family: monospace;
+    font-weight: 400;
+    color: gray;
+}
+.radiobuttons{
+    display: flex;
+    
+}
+label{
+    margin-left: 10px;
+}
+#Search{
+    margin-left: 10px;
+    background-color: transparent;
+    font-size: 18px;
+    outline: none;
+    border: 2px solid gray;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: .5s;
+    color: gray;
+}
+#Search:hover{
+    background-color: gray;
+    color: white;
+    cursor: pointer;
+}
