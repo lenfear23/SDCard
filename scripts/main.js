@@ -34,9 +34,15 @@ const data = [
     }
   ]
 
+ 
+
   //Oldal betöltése
   document.addEventListener('DOMContentLoaded',()=>{
-    let tomb=[];
+    let tomb = [{
+      "nev": "",
+      "meret":""
+    },
+  ];
 
     //Feltöltjük a kártyákat az adatokkal a HTML-be
     for(i=0; i<data.length;i++){
@@ -69,7 +75,8 @@ const data = [
         //Ha az inputban szerepel olyan ami a tömbünk.nevében akkor
         if(data[i].nev.match(`${input}`) ){
             
-            
+           tomb.push({nev: data[i].nev, meret: data[i].meret})
+            console.log(tomb);
             //azt az elemet hozzáadjuk a container-hez
             document.getElementById("container").innerHTML += `
             <div class="card">
@@ -93,17 +100,31 @@ const data = [
         let selected = document.querySelector("input[name='meret']:checked").value;
         
           document.getElementById("container").innerHTML = ``;
-  
-          for(i=0; i<data.length;i++){
+          let input = document.getElementById("search").value;
+          if(input.length>0){
+          for(i=0; i<tomb.length;i++){
             
-            if(data[i].meret == selected){
+            if(tomb[i].meret == selected){
                 document.getElementById("container").innerHTML += `
                 <div class="card">
-                <div class="nev">${data[i].nev}</div>
-                <div class="meret">${data[i].meret}</div>
+                <div class="nev">${tomb[i].nev}</div>
+                <div class="meret">${tomb[i].meret}</div>
             </div>
                 `;
             }
+          }}else{
+            for(i=0; i<data.length;i++){
+            
+              if(data[i].meret == selected){
+                  document.getElementById("container").innerHTML += `
+                  <div class="card">
+                  <div class="nev">${data[i].nev}</div>
+                  <div class="meret">${data[i].meret}</div>
+              </div>
+                  `;
+              }
+
+          }
         }
       });
     }
