@@ -36,6 +36,7 @@ const data = [
 
   //Oldal betöltése
   document.addEventListener('DOMContentLoaded',()=>{
+    let tomb=[];
 
     //Feltöltjük a kártyákat az adatokkal a HTML-be
     for(i=0; i<data.length;i++){
@@ -67,7 +68,8 @@ const data = [
 
         //Ha az inputban szerepel olyan ami a tömbünk.nevében akkor
         if(data[i].nev.match(`${input}`) ){
-
+            
+            
             //azt az elemet hozzáadjuk a container-hez
             document.getElementById("container").innerHTML += `
             <div class="card">
@@ -85,28 +87,27 @@ const data = [
 
     let radioBtns = document.querySelectorAll("input[name='meret']");
 
-    let findSelected = () => {
-      let selected = document.querySelector("input[name='meret']:checked").value;
-      console.log(selected);
-        document.getElementById("container").innerHTML = ``;
-
-        for(i=0; i<data.length;i++){
-          if(data[i].meret == selected){
-              document.getElementById("container").innerHTML += `
-              <div class="card">
-              <div class="nev">${data[i].nev}</div>
-              <div class="meret">${data[i].meret}</div>
-          </div>
-              `;
-          }
-      }
-    }
-
     
-
     radioBtns.forEach(radioBtn => {
-      radioBtn.addEventListener("change", findSelected);
+      radioBtn.addEventListener("change", () =>{
+        let selected = document.querySelector("input[name='meret']:checked").value;
+        
+          document.getElementById("container").innerHTML = ``;
+  
+          for(i=0; i<data.length;i++){
+            
+            if(data[i].meret == selected){
+                document.getElementById("container").innerHTML += `
+                <div class="card">
+                <div class="nev">${data[i].nev}</div>
+                <div class="meret">${data[i].meret}</div>
+            </div>
+                `;
+            }
+        }
+      });
     }
+    
 
     
 
